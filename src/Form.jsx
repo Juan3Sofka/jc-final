@@ -40,7 +40,10 @@ export const Form = () => {
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" value={value.password} id="password" placeholder="Ingresa tu contraseña" onChange={handleInput}/>
                 </div>
-                <input type="submit" value="Ingresar" class="btn solid"></input>
+
+                <input type="submit" value="Ingresar" class="btn"/>
+                
+                
                 <img className="form__logo" src="src/assets/logo-jovenesCreativos.png" alt="Jovenes Creativos" width="200px" />
             </form>
         </div>
