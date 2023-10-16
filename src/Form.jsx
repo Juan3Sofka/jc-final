@@ -10,10 +10,10 @@ export const Form = () => {
     })
 
     const handleInput = (event)=>{
-        const {name, value}= event.target;
+        const {name, values}= event.target;
         setValue({
             ...value,
-            [name]: value,
+            [name]: values,
         })
     }
 
@@ -24,21 +24,21 @@ export const Form = () => {
 
     return(
         <div className="container">
-            <form action="" className="container__form">
+            <form  className="container__form">
                 <h1 className="form__title">Bienvenid@</h1>
                 <div className="form__input">
                     <i className="fas fa-user"></i>
-                    <input type="text" name="userName" value={value.userName} placeholder="Ingresa tu usuario" onChange={handleInput}/>
+                    <input type="text" name="userName" placeholder="Ingresa tu usuario" onChange={handleInput}/>
                 </div>
 
                 <div className="form__input">
                     <i className="fas fa-envelope"></i>
-                    <input type="email" name="email" value={value.email} placeholder="Ingresa tu email" onChange={handleInput}/>
+                    <input type="email" name="email"  placeholder="Ingresa tu email" onChange={handleInput}/>
                 </div>
                 
                 <div className="form__input">
                     <i className="fas fa-lock"></i>
-                    <input type="password" name="password" value={value.password} id="password" placeholder="Ingresa tu contraseña" onChange={handleInput}/>
+                    <input type="password" name="password"  id="password" placeholder="Ingresa tu contraseña" onChange={handleInput}/>
                 </div>
 
                 <input type="submit" value="Ingresar" className="btn"/>
