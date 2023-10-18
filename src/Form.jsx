@@ -40,8 +40,9 @@ export const Form = () => {
                     <i className="fas fa-lock"></i>
                     <input type="password" name="password"  id="password" placeholder="Ingresa tu contraseña" onChange={handleInput}/>
                 </div>
+                <input type="submit" value="Ingresar" className="btn" onClick={handleForm}/>
 
-                <input type="submit" value="Ingresar" className="btn"/>
+                <a className="form__link" href="/">Crear Cuenta</a>
                 
             </form>
 

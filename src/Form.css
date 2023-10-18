@@ -103,3 +103,14 @@ form{
     height: 400px;
     width: auto;
 }
+
+.form__link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffe8ff;
+}
+
+.form__link:hover{
+    font-size: 20px;
+    color: #b6713c;
+}

@@ -1,19 +1,20 @@
 // import './App.css'
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
 import { Form } from './Form'
 import { Registro } from './Registro'
-import { Rutas } from './Rutas'
 
 function App() {
+
   return (
-    <Router>
-      <React.Fragment>
-        <Registro>
-          <Form />
-        </Registro>
-        <Rutas />
-      </React.Fragment>
-    </Router>
+    <>
+      <div>
+        <Routes>
+            <Route path="/" element={<Registro/>} />
+            <Route path="/form" element={<Form/>} />
+        </Routes>
+      </div>
+    </>
     
   )
 }
