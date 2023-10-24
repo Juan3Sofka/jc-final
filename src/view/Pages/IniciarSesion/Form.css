@@ -30,11 +30,7 @@ form{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 0.5rem;
-    overflow: hidden;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    transition: 0.2s 0.7s ease-in-out;
+    
 }
 .form__title{
     margin-top: 20px;
@@ -72,7 +68,10 @@ form{
     color: #aaa;
     font-weight: 500;
 }
-.btn{
+.btn__form{
+    font-size: 1rem;
+    display: grid;
+    place-items: center;
     width: 150px;
     height: 49px;
     border: none;
@@ -86,9 +85,10 @@ form{
     margin: 10px 0;
     transition: .5s;
 }
-.btn:hover{
+.btn__form:hover{
     box-shadow: #333;
     background-color: #ec9c25;
+    color: #fff;
 }
 .containerDos{
     width: 70%;

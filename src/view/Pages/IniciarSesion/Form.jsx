@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import './Form.css'
 
 export const Form = () => {
@@ -40,9 +42,10 @@ export const Form = () => {
                     <i className="fas fa-lock"></i>
                     <input type="password" name="password"  id="password" placeholder="Ingresa tu contraseña" onChange={handleInput}/>
                 </div>
-                <input type="submit" value="Ingresar" className="btn" onClick={handleForm}/>
+                {/* <Link to='home' className="btn" onClick={handleForm}>Ingresar</Link> */}
+                <Link to='home'className="btn__form">Ingresar</Link>
 
-                <a className="form__link" href="/">Crear Cuenta</a>
+                <Link to='registro' className="register__link">Iniciar Sesión</Link>
                 
             </form>
 

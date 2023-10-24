@@ -1,22 +1,14 @@
 // import './App.css'
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { Form } from './Form'
-import { Registro } from './Registro'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./view/routes/routes";
+import { TaskProvider } from "./view/context/tasks";
 
 function App() {
-
   return (
-    <>
-      <div>
-        <Routes>
-            <Route path="/" element={<Registro/>} />
-            <Route path="/form" element={<Form/>} />
-        </Routes>
-      </div>
-    </>
-    
-  )
+    <TaskProvider>
+      <RouterProvider router={router} />
+    </TaskProvider>
+  );
 }
 
-export default App
+export default App;
