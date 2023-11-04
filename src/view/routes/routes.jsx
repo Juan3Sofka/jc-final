@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Form } from "../Pages/IniciarSesion/Form";
 import { Registro } from "../Pages/Registro/Registro";
-import { Header } from "../components/Header/Header";
+import { Layout } from "../components/Layout/Layout";
+import { ToDos } from "../Pages/ToDos";
+import { ProtectedRoute } from "./protectedRoute";
 
 export const router = createBrowserRouter([
   {
@@ -9,13 +11,22 @@ export const router = createBrowserRouter([
     Component: Form
   },
   {
-    path: "registro",
+    path: "/registro",
     Component: Registro
   },
   {
-    path:"home",
-    Component: Header
-  }
+    path:"/home",
+    Component: Layout,
+
+    children:[
+      {
+        path: '',
+        element: <ProtectedRoute>
+          <ToDos/>
+        </ProtectedRoute>
+      }
+    ]
+  },
 ]);
 
     // children: [

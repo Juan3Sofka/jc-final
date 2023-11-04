@@ -1,58 +1,74 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-import './Form.css'
+import { TaskContext } from "../../context/tasks";
+import './Form.css';
 
 export const Form = () => {
-    const [value, setValue] = useState({
-        //Inicializamos valores
-        userName: "",
-        email: "",
-        password: "",
-    })
+    const{state,dispatch} = useContext(TaskContext)
+    const [loginError, setLoginError] = useState(null);
+    const navigate = useNavigate();
 
-    const handleInput = (event)=>{
-        const {name, values}= event.target;
-        setValue({
-            ...value,
-            [name]: values,
+    // const redirigirUser = () =>{
+    //     // navigate('home')
+    // }
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        fetch('https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/user/auth', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: event.target.elements.email.value,
+                password: event.target.elements.password.value,
+            }),
         })
+            .then((response) => {
+                if (response.ok) {
+
+                    return response.json()
+
+                } else {
+                    throw new Error('Credenciales incorrectas')
+                }
+            })
+            .then((data) => {
+                dispatch({type:"LOGIN_USER", payload: data.user})
+                navigate('/home')
+            }).catch(error=>{
+                setLoginError(error)
+            })
     }
 
-    const handleForm = (event)=>{
-        event.preventDefault(); //Para que la página se recargue
-        console.log(value)
-    }
 
-    return(
+    return (
         <div className="container">
-            <form  className="container__form">
+            <form onSubmit={handleLogin} className="container__form">
                 <h1 className="form__title">Bienvenid@</h1>
-                <div className="form__input">
-                    <i className="fas fa-user"></i>
-                    <input type="text" name="userName" placeholder="Ingresa tu usuario" onChange={handleInput}/>
-                </div>
 
                 <div className="form__input">
                     <i className="fas fa-envelope"></i>
-                    <input type="email" name="email"  placeholder="Ingresa tu email" onChange={handleInput}/>
+                    <input type="email" name="email" placeholder="Ingresa tu email" />
                 </div>
-                
+
                 <div className="form__input">
                     <i className="fas fa-lock"></i>
-                    <input type="password" name="password"  id="password" placeholder="Ingresa tu contraseña" onChange={handleInput}/>
+                    <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña" />
                 </div>
-                {/* <Link to='home' className="btn" onClick={handleForm}>Ingresar</Link> */}
-                <Link to='home'className="btn__form">Ingresar</Link>
 
-                <Link to='registro' className="register__link">Iniciar Sesión</Link>
-                
+                <button type="submit" className="btn__form" >Ingresar</button>
+
+
+                {loginError && (
+                    <p className="error-message">{loginError}</p>
+                )}
+
+                <Link to='registro' className="register__link">Registrarse</Link>
             </form>
 
             <div className="containerDos">
-                <img className="form__logo" src="src/assets/logo-jovenesCreativos.png" alt="Jovenes Creativos"/>
+                <img className="form__logo" src="src/assets/logo-jovenesCreativos.png" alt="Jovenes Creativos" />
             </div>
-
         </div>
     )
 }

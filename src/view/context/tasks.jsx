@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
+import { initialState, reducer } from "../../reducer/todos";
 
 export const TaskContext = createContext()
 
 export const TaskProvider = ({ children }) => {
-    const[tasks,setTasks] = useState()
+    const [state, dispatch] = useReducer (reducer, initialState)
     return(
-        <TaskContext.Provider value={{ tasks, setTasks}}>
+        <TaskContext.Provider value={{ state, dispatch}}>
             {children}
         </TaskContext.Provider>
     )

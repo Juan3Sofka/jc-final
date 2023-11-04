@@ -13,7 +13,6 @@ dist-ssr
 *.local
 
 ToDo.jsx
-Layout
 
 # Editor directories and files
 .vscode/*

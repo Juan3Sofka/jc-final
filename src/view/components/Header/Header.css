@@ -1,0 +1,39 @@
+
+.container__home {
+    width: 100%;
+    height: auto;
+    position: relative; /* Añadimos posición relativa */
+}
+
+.container__home::before {
+    content: ""; /* Agregamos un pseudoelemento ::before */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 218, 180);
+    background: linear-gradient(90deg, rgba(255, 218, 180, 1) 0%, rgba(249, 160, 67, 1) 50%, rgba(255, 130, 0, 1) 100%);
+    filter: blur(4px); /* Aplicamos el filtro de desenfoque al pseudoelemento */
+    z-index: -1; /* Colocamos el pseudoelemento detrás del contenido */
+}
+header{
+    /* background-color: #ffffff8b; */
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+}
+header ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container__logo {
+    width: 20%;
+}
+
+
