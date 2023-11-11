@@ -5,7 +5,7 @@ export const Header = ()=>{
         <div className="container__home">
             <header>
                 <div className='container__logo'>
-                    <img className='home__logo' src="src/assets/logo-jovenesCreativos.png" alt="Logo" width="250px" height="150px" />
+                    <img className='home__logo' src="https://i.postimg.cc/85n0q9SN/logo-jovenes-Creativos.png" alt="Logo" width="250px" height="150px" />
                 </div>
 
                 <div className="container__title">

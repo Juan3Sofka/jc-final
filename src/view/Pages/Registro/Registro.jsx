@@ -50,7 +50,7 @@ export const Registro = () => {
     return (
         <div className="contain">
             <div className="containDosRegister">
-                <img className="register__logo" src="src/assets/logo-jovenesCreativos.png" alt="Jovenes Creativos"/>
+                <img className="register__logo" src="https://i.postimg.cc/85n0q9SN/logo-jovenes-Creativos.png" alt="Jovenes Creativos"/>
             </div>
 
             <form onSubmit={RegisterFormData} className="container__register">
