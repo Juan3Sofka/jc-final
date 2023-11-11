@@ -1,11 +1,11 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import { Form } from "../Pages/IniciarSesion/Form";
 import { Registro } from "../Pages/Registro/Registro";
 import { Layout } from "../components/Layout/Layout";
 import { ToDos } from "../Pages/ToDos/ToDos";
 import { ProtectedRoute } from "./ProtectedRoute";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     Component: Form
