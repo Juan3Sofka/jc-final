@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Form } from "../Pages/IniciarSesion/Form";
 import { Registro } from "../Pages/Registro/Registro";
 import { Layout } from "../components/Layout/Layout";
-import { ToDos } from "../Pages/ToDos";
+import { ToDos } from "../Pages/ToDos/ToDos";
 import { ProtectedRoute } from "./protectedRoute";
 
 export const router = createBrowserRouter([

@@ -12,7 +12,8 @@ export const Header = ()=>{
                     <h1>MyToDoList</h1>
                 </div>
                 <ul>
-                    <li><Link to='/'>Cerrar Sesion</Link></li>
+                    {/* Hacer función para eliminar session con On CliCK */}
+                    <li><Link to='/' >Cerrar Sesion</Link></li>
                     <li><Link to='/registro'>Registro</Link></li>
                 </ul>
             </header>
