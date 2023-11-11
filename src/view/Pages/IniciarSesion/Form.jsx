@@ -67,7 +67,7 @@ export const Form = () => {
             </form>
 
             <div className="containerDos">
-                <img className="form__logo" src="./../../../assets/logo-jovenesCreativos.png" alt="Jovenes Creativos" />
+                <img className="form__logo" src="https://i.postimg.cc/85n0q9SN/logo-jovenes-Creativos.png" alt="Jovenes Creativos" />
             </div>
         </div>
     )
